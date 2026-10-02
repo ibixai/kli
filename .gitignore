@@ -1,0 +1,6 @@
+# Archives (not part of the live site)
+*.zip
+
+# macOS
+.DS_Store
+__MACOSX/
