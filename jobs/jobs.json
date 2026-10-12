@@ -1,0 +1,193 @@
+{
+  "_readme": "Open roles on kli-recruitment.co.za. Edit this file, then run: python3 tools/build_jobs.py  (rebuilds jobs/*.html and the list on job-seekers.html). Jobs appear in this order. sector is 'fin' (Finance) or 'sec' (Secretarial & Reception).",
+  "jobs": [
+    {
+      "slug": "qualified-accountant",
+      "title": "Qualified Accountant",
+      "sector": "fin",
+      "location": "Cape Town",
+      "type": "Permanent, full-time",
+      "typeShort": "Permanent",
+      "salary": "R50,000 – R60,000 per month",
+      "salaryNote": "CTC, based on experience",
+      "posted": "2026-10-12",
+      "summary": "Take ownership of the day-to-day accounting function and support management with accurate, timely financial information.",
+      "about": "A Cape Town-based company is looking for a qualified accountant to strengthen its finance team.",
+      "roleHeading": "The role",
+      "role": "You'll take ownership of the day-to-day accounting function and support management with accurate, timely financial information.",
+      "responsibilities": [
+        "Prepare monthly management accounts and financial statements",
+        "Manage the general ledger, bank reconciliations and balance sheet reconciliations",
+        "Oversee accounts payable and receivable",
+        "Prepare and submit VAT, PAYE and other SARS returns",
+        "Assist with budgeting, forecasting and cash flow management",
+        "Support annual audits and year-end processes",
+        "Maintain strong internal controls and improve finance processes",
+        "Supervise and guide junior finance staff"
+      ],
+      "requirements": [
+        "BCom Accounting degree or equivalent",
+        "Qualified CA(SA), CIMA, ACCA, or SAIPA/SAICA-registered (or equivalent professional designation)",
+        "3+ years' post-qualification experience",
+        "Strong knowledge of IFRS and South African tax legislation",
+        "Proficiency in Excel and accounting software (e.g. Sage, Xero, SAP or Pastel)",
+        "Excellent attention to detail and ability to meet deadlines",
+        "Strong communication and problem-solving skills"
+      ],
+      "offer": [
+        "Competitive salary of R50,000 – R60,000 per month"
+      ]
+    },
+    {
+      "slug": "articled-clerk",
+      "title": "Articled Clerk (CA(SA) Training Contract)",
+      "sector": "fin",
+      "location": "Cape Town",
+      "type": "Fixed-term training contract (3 years)",
+      "typeShort": "Training contract (3 years)",
+      "salary": "R10,000 – R13,000 per month",
+      "salaryNote": "",
+      "posted": "2026-10-12",
+      "summary": "Start your CA(SA) journey with hands-on training in audit, accounting and tax at a SAICA-accredited firm.",
+      "about": "A Cape Town-based accounting and auditing firm. The firm is SAICA-accredited and committed to developing the next generation of chartered accountants.",
+      "roleHeading": "The opportunity",
+      "role": "Start your CA(SA) journey with hands-on training in audit, accounting and tax, supported by experienced mentors and a structured development programme.",
+      "responsibilities": [
+        "Assist with audit and assurance engagements across a variety of clients",
+        "Perform testing, vouching and reconciliations",
+        "Prepare working papers and support financial statement preparation",
+        "Assist with tax and accounting assignments",
+        "Liaise with clients and gather information professionally",
+        "Meet deadlines while maintaining high quality standards"
+      ],
+      "requirements": [
+        "BCom Accounting (or equivalent) degree, with CTA/Postgraduate Diploma in Accounting completed or in progress",
+        "Passed or on track to write the SAICA Initial Test of Competence (ITC)",
+        "Strong academic record",
+        "Good knowledge of IFRS and accounting principles",
+        "Proficiency in Excel and MS Office",
+        "Strong attention to detail, a willingness to learn and the ability to work in a team",
+        "Own transport and a valid driver's licence (advantageous)"
+      ],
+      "offer": [
+        "Competitive monthly salary of R10,000 – R13,000, reviewed annually",
+        "Structured training toward SAICA registration",
+        "Study leave and exam support",
+        "Mentorship from qualified CAs",
+        "Opportunities for permanent employment after qualifying"
+      ]
+    },
+    {
+      "slug": "senior-bookkeeper",
+      "title": "Senior Bookkeeper",
+      "sector": "fin",
+      "location": "Cape Town",
+      "type": "Permanent, full-time",
+      "typeShort": "Permanent",
+      "salary": "R16,500 – R18,000 per month",
+      "salaryNote": "based on experience",
+      "posted": "2026-10-12",
+      "summary": "Manage the full bookkeeping cycle through to trial balance, with clean records and timely reporting.",
+      "about": "A Cape Town-based company is looking for an experienced senior bookkeeper to keep its finances accurate and up to date.",
+      "roleHeading": "The role",
+      "role": "You'll manage the full bookkeeping cycle through to trial balance, ensuring clean records and timely reporting for management and the accountant.",
+      "responsibilities": [
+        "Capture and process all financial transactions accurately",
+        "Manage accounts payable and receivable, including supplier and debtor reconciliations",
+        "Perform bank and credit card reconciliations",
+        "Process payroll and manage UIF, SDL and PAYE submissions",
+        "Prepare and submit VAT returns",
+        "Maintain the general ledger and prepare the monthly trial balance",
+        "Assist with month-end and year-end closing and audit queries",
+        "Guide and review the work of junior bookkeepers or clerks"
+      ],
+      "requirements": [
+        "Diploma or certificate in Bookkeeping or Financial Accounting (or equivalent)",
+        "Minimum 5 years' bookkeeping experience, including full-cycle to trial balance",
+        "Strong knowledge of VAT, PAYE and SARS eFiling",
+        "Proficiency in Excel and accounting software (e.g. Sage, Xero, Pastel or QuickBooks)",
+        "High attention to detail and strong organisational skills",
+        "Ability to work independently and meet deadlines"
+      ],
+      "offer": [
+        "Salary of R16,500 – R18,000 per month",
+        "A supportive team environment",
+        "Opportunities for growth and development"
+      ]
+    },
+    {
+      "slug": "bookkeeper",
+      "title": "Bookkeeper",
+      "sector": "fin",
+      "location": "Cape Town",
+      "type": "Permanent, full-time",
+      "typeShort": "Permanent",
+      "salary": "R12,500 – R15,000 per month",
+      "salaryNote": "based on experience",
+      "posted": "2026-10-12",
+      "summary": "Handle the day-to-day bookkeeping, from capturing transactions to reconciliations, supporting the senior team and accountant.",
+      "about": "A Cape Town-based company is looking for a reliable bookkeeper to join its finance team and keep its records accurate and up to date.",
+      "roleHeading": "The role",
+      "role": "You'll handle the day-to-day bookkeeping function, from capturing transactions to reconciliations, supporting the senior team and accountant.",
+      "responsibilities": [
+        "Capture and process daily financial transactions accurately",
+        "Manage accounts payable and receivable, including supplier and debtor reconciliations",
+        "Perform bank reconciliations",
+        "Process invoices, payments and petty cash",
+        "Assist with payroll, UIF and VAT submissions",
+        "Maintain the general ledger and assist with the monthly trial balance",
+        "Support month-end and year-end processes",
+        "File and maintain accurate financial records"
+      ],
+      "requirements": [
+        "Diploma or certificate in Bookkeeping or Financial Accounting (or equivalent)",
+        "Minimum 2–3 years' bookkeeping experience",
+        "Working knowledge of VAT, PAYE and SARS eFiling (advantageous)",
+        "Proficiency in Excel and accounting software (e.g. Sage, Xero, Pastel or QuickBooks)",
+        "Strong attention to detail and good organisational skills",
+        "Ability to meet deadlines and work well in a team"
+      ],
+      "offer": [
+        "Salary of R12,500 – R15,000 per month"
+      ]
+    },
+    {
+      "slug": "receptionist-administrator",
+      "title": "Receptionist / Administrator",
+      "sector": "sec",
+      "location": "Cape Town",
+      "type": "Permanent, full-time",
+      "typeShort": "Permanent",
+      "salary": "R9,000 – R12,000 per month",
+      "salaryNote": "based on experience",
+      "posted": "2026-10-12",
+      "summary": "Be the friendly first point of contact for clients and visitors, and keep the office running smoothly.",
+      "about": "A Cape Town-based company is looking for a friendly, organised receptionist/administrator to be the first point of contact for its clients and visitors.",
+      "roleHeading": "The role",
+      "role": "You'll run the front desk and provide general administrative support, keeping the office running smoothly and professionally.",
+      "responsibilities": [
+        "Greet and assist visitors, clients and suppliers",
+        "Answer and direct incoming calls and emails",
+        "Manage diaries, bookings and meeting rooms",
+        "Handle incoming and outgoing post and courier deliveries",
+        "Capture data, prepare documents and maintain filing systems",
+        "Order stationery and office supplies",
+        "Assist with invoicing, quotes and basic admin tasks",
+        "Provide support to management and colleagues as needed"
+      ],
+      "requirements": [
+        "Matric (Grade 12); administration or office management qualification (advantageous)",
+        "Minimum 1–2 years' reception or administration experience",
+        "Proficiency in MS Office (Word, Excel, Outlook)",
+        "Excellent verbal and written communication skills",
+        "Professional appearance and friendly telephone manner",
+        "Strong organisational and multitasking skills",
+        "Ability to work independently and as part of a team",
+        "Own transport (advantageous)"
+      ],
+      "offer": [
+        "Salary of R9,000 – R12,000 per month"
+      ]
+    }
+  ]
+}
