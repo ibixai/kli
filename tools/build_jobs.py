@@ -16,6 +16,7 @@ e = html.escape
 ICON_PIN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0C918A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
 ICON_BAG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0C918A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>'
 ICON_ZAR = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0C918A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>'
+FACEBOOK = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzE4NzdGMiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNi42IDI0di05LjNoMy4xbC41LTMuNmgtMy42VjguOGMwLTEgLjMtMS44IDEuOC0xLjhoMS45VjMuOGMtLjMgMC0xLjUtLjEtMi44LS4xLTIuOCAwLTQuNyAxLjctNC43IDQuOHYyLjZIOS42djMuNmgzLjJWMjR6Ii8+PC9zdmc+'
 LINKEDIN = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzBBNjZDMiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik03LjEgOS41aC0yLjZWMTloMi42VjkuNXpNNS44IDVhMS41IDEuNSAwIDEgMCAwIDMgMS41IDEuNSAwIDAgMCAwLTN6TTE5LjUgMTMuNmMwLTIuNi0uNi00LjMtMy41LTQuMy0xLjQgMC0yLjMuNy0yLjcgMS40VjkuNWgtMi41VjE5aDIuNnYtNC43YzAtMS4yLjItMi40IDEuOC0yLjQgMS41IDAgMS42IDEuNCAxLjYgMi41VjE5aDIuN3YtNS40eiIvPjwvc3ZnPg=='
 
 
@@ -184,7 +185,8 @@ def page(job, jobs):
     <div class="brand"><img src="../assets/logo.png" alt="KLI Recruitment"><p>Specialist finance and secretarial recruitment, based in Cape Town.</p></div>
     <div class="col"><h4>EXPLORE</h4><a href="../about.html">About</a><a href="../employers.html">Employers</a><a href="../job-seekers.html">Job Seekers</a></div>
     <div class="col"><h4>CONTACT</h4><a href="mailto:russell@kli-recruitment.co.za">russell@kli-recruitment.co.za</a><a href="tel:+27818785864">+27 81 878 5864</a><div>Cape Town, South Africa</div>
-      <a class="li" href="https://www.linkedin.com/company/kli-recruitment/?originalSubdomain=za" target="_blank" rel="noopener" aria-label="KLI Recruitment on LinkedIn"><img src="{LINKEDIN}" alt="" width="28" height="28">LinkedIn</a></div>
+      <a class="li" href="https://www.linkedin.com/company/kli-recruitment/?originalSubdomain=za" target="_blank" rel="noopener" aria-label="KLI Recruitment on LinkedIn"><img src="{LINKEDIN}" alt="" width="28" height="28">LinkedIn</a>
+      <a class="fb" href="https://www.facebook.com/klirecruitment" target="_blank" rel="noopener" aria-label="KLI Recruitment on Facebook"><img src="{FACEBOOK}" alt="" width="28" height="28">Facebook</a></div>
   </div>
   <div class="bottom"><div>© 2026 KLI Recruitment. All rights reserved.</div><div>People. Places. Possibilities.</div></div>
 </footer>
