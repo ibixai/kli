@@ -298,7 +298,49 @@
       ],
       "offer": [
         "Salary of R9,000 – R12,000 per month"
-      ]
+      ],
+      "showSalaryOnCard": true,
+      "applyAs": "Receptionist / Administrator (R9,000 – R12,000)"
+    },
+    {
+      "slug": "receptionist-administrator-2",
+      "title": "Receptionist / Administrator",
+      "sector": "sec",
+      "location": "Cape Town",
+      "type": "Permanent, full-time",
+      "typeShort": "Permanent",
+      "salary": "R10,000 – R12,000 per month",
+      "salaryNote": "based on experience",
+      "posted": "2026-10-16",
+      "summary": "Be the first face and voice that clients and visitors meet, and help the office run smoothly.",
+      "about": "A Cape Town company is looking for a warm, well-organised receptionist/administrator to be the first face and voice that clients and visitors meet.",
+      "roleHeading": "The role",
+      "role": "You'll manage the front desk and provide day-to-day administrative support, helping the office run smoothly and professionally.",
+      "responsibilities": [
+        "Welcome and assist visitors, clients and suppliers",
+        "Answer calls and emails, and route them to the right person",
+        "Manage diaries, bookings and meeting room schedules",
+        "Handle post, couriers and deliveries",
+        "Capture data, prepare documents and keep filing up to date",
+        "Order stationery and office supplies",
+        "Assist with invoicing, quotes and general admin",
+        "Support management and colleagues where needed"
+      ],
+      "requirements": [
+        "Matric (Grade 12); an administration or office management qualification is advantageous",
+        "At least 1–2 years' experience in reception or administration",
+        "Proficiency in MS Office (Word, Excel and Outlook)",
+        "Strong verbal and written communication skills",
+        "Professional appearance and a friendly telephone manner",
+        "Good organisational and multitasking abilities",
+        "Able to work independently and in a team",
+        "Own transport is advantageous"
+      ],
+      "offer": [
+        "Salary of R10,000 – R12,000 per month, based on experience"
+      ],
+      "showSalaryOnCard": true,
+      "applyAs": "Receptionist / Administrator (R10,000 – R12,000)"
     }
   ]
 }
