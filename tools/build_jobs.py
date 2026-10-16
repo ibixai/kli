@@ -25,6 +25,17 @@ def salary_range(s):
     return (nums[0], nums[1]) if len(nums) >= 2 else (nums[0], nums[0]) if nums else (None, None)
 
 
+def card_meta(j):
+    """'Cape Town · Permanent', plus the salary when the job asks for it (e.g. two similar roles)."""
+    m = j['location'] + ' · ' + j['typeShort']
+    return m + ' · ' + j['salary'] if j.get('showSalaryOnCard') else m
+
+
+def apply_as(j):
+    """The role name an application is sent under (defaults to the title)."""
+    return j.get('applyAs') or j['title']
+
+
 def section(title, body, cls=''):
     return f'<section class="job-section {cls}"><h2>{e(title)}</h2>{body}</section>'
 
@@ -59,7 +70,7 @@ def page(job, jobs):
     others = [j for j in jobs if j['slug'] != job['slug']]
     more = ''.join(
         f'<a class="more-card" href="{j["slug"]}.html"><span class="s" style="color:{"#0C918A" if j["sector"] == "fin" else "#B07A06"}">{e(SECTOR[j["sector"]][0])}</span>'
-        f'<span class="t">{e(j["title"])}</span><span class="m">{e(j["location"])} · {e(j["typeShort"])}</span></a>' for j in others)
+        f'<span class="t">{e(j["title"])}</span><span class="m">{e(card_meta(j))}</span></a>' for j in others)
 
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -146,8 +157,8 @@ def page(job, jobs):
         <p>Tailor your CV to this role before you send it: lead with your most relevant experience and use the same words as the job description. You'll speak to Russell directly.</p>
       </div>
       <div class="apply-card">
-        <form class="apply-form" data-role="{e(job['title'])}" enctype="multipart/form-data">
-          <input type="hidden" name="role" value="{e(job['title'])}">
+        <form class="apply-form" data-role="{e(apply_as(job))}" enctype="multipart/form-data">
+          <input type="hidden" name="role" value="{e(apply_as(job))}">
           <input type="hidden" name="sector" value="{e(sector_name)}">
           <div class="full role-lock">{e(job['title'])}<span>Applying for</span></div>
           <label>Full name<input name="name" type="text" required autocomplete="name"></label>
@@ -231,11 +242,15 @@ def update_job_seekers(jobs):
             if raw.count(old) != 1:
                 sys.exit('job-seekers.html: could not find the job card markup to upgrade')
             raw = raw.replace(old, new)
+    APPLY_OLD = esc("onApply: () => this.apply(j.title, ")
+    if raw.count(APPLY_OLD) == 1:
+        raw = raw.replace(APPLY_OLD, esc("onApply: () => this.apply(j.applyAs || j.title, "))
     # Replace the job list
     rows = ',\n'.join(
         '    { ' + ', '.join(f'{k}: {json.dumps(v, ensure_ascii=False)}' for k, v in (
             ('slug', j['slug']), ('title', j['title']), ('sector', j['sector']),
-            ('where', j['location']), ('type', j['typeShort']), ('summary', j['summary']))) + ' }'
+            ('where', j['location']), ('type', card_meta(j)[len(j['location']) + 3:]), ('summary', j['summary']),
+            ('applyAs', apply_as(j)))) + ' }'
         for j in jobs)
     m = re.search(r'jobsData = \[.*?\];', raw)
     if not m:

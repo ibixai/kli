@@ -75,7 +75,50 @@
         "Study leave and exam support",
         "Mentorship from qualified CAs",
         "Opportunities for permanent employment after qualifying"
-      ]
+      ],
+      "showSalaryOnCard": true,
+      "applyAs": "Articled Clerk – CA(SA) Training Contract (R10,000 – R13,000)"
+    },
+    {
+      "slug": "articled-clerk-2",
+      "title": "Articled Clerk – CA(SA) Training Contract",
+      "sector": "fin",
+      "location": "Cape Town",
+      "type": "Fixed-term training contract (3 years)",
+      "typeShort": "Training contract (3 years)",
+      "salary": "R13,000 – R15,000 per month",
+      "salaryNote": "",
+      "posted": "2026-10-16",
+      "summary": "Start your CA(SA) journey with hands-on training in audit, accounting and tax at a SAICA-accredited firm.",
+      "about": "A Cape Town-based accounting and auditing firm. The firm is SAICA-accredited and committed to developing the next generation of chartered accountants.",
+      "roleHeading": "The opportunity",
+      "role": "Start your CA(SA) journey with hands-on training in audit, accounting and tax, supported by experienced mentors and a structured development programme.",
+      "responsibilities": [
+        "Assist with audit and assurance engagements across a variety of clients",
+        "Perform testing, vouching and reconciliations",
+        "Prepare working papers and support financial statement preparation",
+        "Assist with tax and accounting assignments",
+        "Liaise with clients and gather information professionally",
+        "Meet deadlines while maintaining high quality standards"
+      ],
+      "requirements": [
+        "BCom Accounting (or equivalent) degree, with CTA/Postgraduate Diploma in Accounting completed or in progress",
+        "Passed or on track to write the SAICA Initial Test of Competence (ITC)",
+        "Strong academic record",
+        "Good knowledge of IFRS and accounting principles",
+        "Proficiency in Excel and MS Office",
+        "Strong attention to detail, a willingness to learn and the ability to work in a team",
+        "Own transport and a valid driver's licence (advantageous)"
+      ],
+      "offer": [
+        "Competitive monthly salary of R13,000 – R15,000, reviewed annually",
+        "Structured training toward SAICA registration",
+        "Study leave and exam support",
+        "Mentorship from qualified CAs",
+        "Opportunities for permanent employment after qualifying"
+      ],
+      "showSalaryOnCard": true,
+      "applyAs": "Articled Clerk – CA(SA) Training Contract (R13,000 – R15,000)"
     },
     {
       "slug": "senior-bookkeeper",
