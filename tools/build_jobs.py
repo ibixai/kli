@@ -5,12 +5,14 @@
 
 - Writes jobs/<slug>.html for every job (and removes pages for jobs no longer listed).
 - Updates the "Open roles" list on job-seekers.html to match.
+- Writes thank-you.html (where applicants land after sending).
 """
 import html, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://kli-recruitment.co.za'
 SECTOR = {'fin': ('FINANCE', 'Finance'), 'sec': ('SECRETARIAL & RECEPTION', 'Secretarial & Reception')}
+FORM_ACTION = 'https://formsubmit.co/russell@kli-recruitment.co.za'
 e = html.escape
 
 ICON_PIN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0C918A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
@@ -42,6 +44,37 @@ def section(title, body, cls=''):
 
 def bullets(items):
     return '<ul>' + ''.join(f'<li>{e(i)}</li>' for i in items) + '</ul>'
+
+
+def site_header(r):
+    return f'''<header class="kli-header">
+  <div class="kli-hdr">
+    <a class="kli-logo" href="{r}index.html"><img src="{r}assets/logo.png" alt="KLI Recruitment"></a>
+    <nav class="kli-nav">
+      <a href="{r}index.html">Home</a>
+      <a href="{r}about.html">About</a>
+      <a href="{r}employers.html">Employers</a>
+      <a class="on" href="{r}job-seekers.html">Job Seekers</a>
+      <a href="{r}contact.html">Contact</a>
+      <a class="kli-navcta" href="{r}contact.html">Let's Talk →</a>
+    </nav>
+    <a class="kli-cta" href="{r}contact.html">Let's Talk <span>→</span></a>
+    <button type="button" class="kli-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>'''
+
+
+def site_footer(r):
+    return f'''<footer class="site-footer">
+  <div class="top">
+    <div class="brand"><img src="{r}assets/logo.png" alt="KLI Recruitment"><p>Specialist finance and secretarial recruitment, based in Cape Town.</p></div>
+    <div class="col"><h4>EXPLORE</h4><a href="{r}about.html">About</a><a href="{r}employers.html">Employers</a><a href="{r}job-seekers.html">Job Seekers</a></div>
+    <div class="col"><h4>CONTACT</h4><a href="mailto:russell@kli-recruitment.co.za">russell@kli-recruitment.co.za</a><a href="tel:+27818785864">+27 81 878 5864</a><div>Cape Town, South Africa</div>
+      <a class="li" href="https://www.linkedin.com/company/kli-recruitment/?originalSubdomain=za" target="_blank" rel="noopener" aria-label="KLI Recruitment on LinkedIn"><img src="{LINKEDIN}" alt="" width="28" height="28">LinkedIn</a>
+      <a class="fb" href="https://www.facebook.com/klirecruitment" target="_blank" rel="noopener" aria-label="KLI Recruitment on Facebook"><img src="{FACEBOOK}" alt="" width="28" height="28">Facebook</a></div>
+  </div>
+  <div class="bottom"><div>© 2026 KLI Recruitment. All rights reserved.</div><div>People. Places. Possibilities.</div></div>
+</footer>'''
 
 
 def page(job, jobs):
@@ -95,21 +128,7 @@ def page(job, jobs):
 </head>
 <body>
 
-<header class="kli-header">
-  <div class="kli-hdr">
-    <a class="kli-logo" href="../index.html"><img src="../assets/logo.png" alt="KLI Recruitment"></a>
-    <nav class="kli-nav">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-      <a href="../employers.html">Employers</a>
-      <a class="on" href="../job-seekers.html">Job Seekers</a>
-      <a href="../contact.html">Contact</a>
-      <a class="kli-navcta" href="../contact.html">Let's Talk →</a>
-    </nav>
-    <a class="kli-cta" href="../contact.html">Let's Talk <span>→</span></a>
-    <button type="button" class="kli-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</header>
+{site_header('../')}
 
 <main>
   <section class="job-hero">
@@ -157,7 +176,11 @@ def page(job, jobs):
         <p>Tailor your CV to this role before you send it: lead with your most relevant experience and use the same words as the job description. You'll speak to Russell directly.</p>
       </div>
       <div class="apply-card">
-        <form class="apply-form" data-role="{e(apply_as(job))}" enctype="multipart/form-data">
+        <form class="apply-form" action="{FORM_ACTION}" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Application: {e(apply_as(job))} (KLI website)">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="{SITE}/thank-you.html">
           <input type="hidden" name="role" value="{e(apply_as(job))}">
           <input type="hidden" name="sector" value="{e(sector_name)}">
           <div class="full role-lock">{e(job['title'])}<span>Applying for</span></div>
@@ -173,11 +196,6 @@ def page(job, jobs):
           <button type="submit" class="btn btn-teal full">Send my application <span>→</span></button>
           <div class="form-error full" role="alert" hidden></div>
         </form>
-        <div class="sent" hidden>
-          <div class="ck">✓</div>
-          <b>Thanks, we've got your CV<span class="dot">.</span></b>
-          <p>Russell will be in touch soon. If it's urgent, call +27 81 878 5864.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -191,18 +209,44 @@ def page(job, jobs):
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="top">
-    <div class="brand"><img src="../assets/logo.png" alt="KLI Recruitment"><p>Specialist finance and secretarial recruitment, based in Cape Town.</p></div>
-    <div class="col"><h4>EXPLORE</h4><a href="../about.html">About</a><a href="../employers.html">Employers</a><a href="../job-seekers.html">Job Seekers</a></div>
-    <div class="col"><h4>CONTACT</h4><a href="mailto:russell@kli-recruitment.co.za">russell@kli-recruitment.co.za</a><a href="tel:+27818785864">+27 81 878 5864</a><div>Cape Town, South Africa</div>
-      <a class="li" href="https://www.linkedin.com/company/kli-recruitment/?originalSubdomain=za" target="_blank" rel="noopener" aria-label="KLI Recruitment on LinkedIn"><img src="{LINKEDIN}" alt="" width="28" height="28">LinkedIn</a>
-      <a class="fb" href="https://www.facebook.com/klirecruitment" target="_blank" rel="noopener" aria-label="KLI Recruitment on Facebook"><img src="{FACEBOOK}" alt="" width="28" height="28">Facebook</a></div>
-  </div>
-  <div class="bottom"><div>© 2026 KLI Recruitment. All rights reserved.</div><div>People. Places. Possibilities.</div></div>
-</footer>
+{site_footer('../')}
 
 <script src="../assets/job.js"></script>
+</body>
+</html>
+'''
+
+
+def thank_you():
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you | KLI Recruitment</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+{site_header('')}
+
+<main class="thanks">
+  <div class="wrap">
+    <div class="ck">✓</div>
+    <h1>Thanks, we've got your CV<span class="dot">.</span></h1>
+    <p>Russell will be in touch soon. If it's urgent, call or WhatsApp <a href="tel:+27818785864">+27 81 878 5864</a>.</p>
+    <div class="hero-actions">
+      <a class="btn btn-teal" href="job-seekers.html">See all open roles <span>→</span></a>
+      <a class="btn btn-line" href="index.html">Back to home</a>
+    </div>
+  </div>
+</main>
+
+{site_footer('')}
+
+<script src="assets/job.js"></script>
 </body>
 </html>
 '''
@@ -274,6 +318,8 @@ def main():
         if f.endswith('.html') and f not in keep:
             os.remove(os.path.join(out, f))
             print('removed jobs/' + f)
+    open(os.path.join(ROOT, 'thank-you.html'), 'w', encoding='utf-8').write(thank_you())
+    print('wrote thank-you.html')
     update_job_seekers(jobs)
     print('updated job-seekers.html')
 

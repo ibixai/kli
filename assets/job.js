@@ -1,4 +1,5 @@
-// Job detail pages: mobile menu + application form (sent to Russell via FormSubmit, like the Job Seekers form).
+// Job pages and thank-you page: mobile menu + application form checks.
+// Applications are ordinary form posts to FormSubmit: its /ajax/ address drops attached files.
 (function () {
   document.addEventListener('click', function (e) {
     var header = document.querySelector('.kli-header');
@@ -29,32 +30,23 @@
   });
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (button.disabled) return;
     var f = file.files[0];
     if (f && f.size > MAX) {
+      e.preventDefault();
       error.textContent = 'That file is over 5MB. Please attach a smaller PDF or Word document.';
       error.hidden = false;
       return;
     }
-    var data = new FormData(form);
-    data.append('_subject', 'Application: ' + form.dataset.role + ' (KLI website)');
-    data.append('_template', 'table');
-    data.append('_captcha', 'false');
     error.hidden = true;
     button.disabled = true;
     button.firstChild.textContent = 'Sending… ';
-    fetch('https://formsubmit.co/ajax/russell@kli-recruitment.co.za', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); })
-      .then(function () {
-        form.hidden = true;
-        document.querySelector('.sent').hidden = false;
-      })
-      .catch(function () {
-        error.textContent = 'Sorry, that didn’t send. Please email your CV to russell@kli-recruitment.co.za.';
-        error.hidden = false;
-        button.disabled = false;
-        button.firstChild.textContent = 'Send my application ';
-      });
+  });
+
+  // If someone comes back with the browser's Back button, let them send again
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      button.disabled = false;
+      button.firstChild.textContent = 'Send my application ';
+    }
   });
 })();
